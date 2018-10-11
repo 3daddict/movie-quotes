@@ -13,12 +13,18 @@ class MovieQuote extends Component {
         return (
             <div className="center">
                 <h1>Movie Quote!</h1>
-                <h4>Random Movie Quote</h4>
+                <h4>{this.props.quote}</h4>
             </div>
         );
     }
 }
 
-export default connect(null, {
+function mapStateToProps(state){
+    return {
+        quote: state.movie.quote
+    }
+}
+
+export default connect(mapStateToProps, {
     getMovieQuote: getMovieQuote
 })(MovieQuote);
