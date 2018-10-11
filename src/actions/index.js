@@ -14,7 +14,10 @@ export const signUp = (userInfo) => {
             });
         }
         catch(err){
-            console.log('Sign up error: ', err.message);
+            dispatch({
+                type: types.SIGN_UP_ERROR,
+                error: 'Error creating the account'
+            });
         }
     }
 };
@@ -32,7 +35,10 @@ export const signIn = userInfo => async dispatch => {
         });
     }
     catch(err){
-        console.log('Sign in error: ', err.message);
+        dispatch({
+            type: types.SIGN_IN_ERROR,
+            error: 'Invalid Email and/or Password'
+        });
     }
 }
 
