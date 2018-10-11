@@ -47,5 +47,14 @@ export const signOut = () => {
     
     return {
         type: types.SIGN_OUT
+    };
+}
+
+export const getMovieQuote = () => async dispatch => {
+    try {
+        const resp = await axios.get('http://api.reactprototypes.com');
+        console.log('Movie Quote Response', resp);
+    } catch(err) {
+        console.log('Movie Quote Error', err.message);
     }
-};
+}
