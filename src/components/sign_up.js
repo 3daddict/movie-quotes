@@ -7,7 +7,6 @@ import { renderInput } from '../helpers';
 class SignUp extends Component {
 
     userSignUp = (values) => {
-        console.log('User Sign Up Info: ', values);
         this.props.signUp(values);
     }
 
